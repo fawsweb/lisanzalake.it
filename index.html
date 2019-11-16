@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			@font-face {
+				font-family: 'manonegra';
+				src: url('./res/manonegra_bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'manonegra';
+				src: url('./res/manonegra_regular.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+			html, body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica', sans-serif;
+				font-size: 14px;
+			}
+			em {
+				font-weight: bold;
+				color: rgb(30,110,200);
+			}
+		</style>
+		<style>
+			#wrapper {
+				position: relative;
+				width: 100%;
+				height: 2000px;
+			}
+				#landing {
+					position: relative;
+					width: 100%;
+					height: 500px;
+					height: 80vh;
+					background: url('./res/lisanza2.jpg');
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: top;
+					overflow: hidden;
+				}
+					#landing #cover {
+						display: block;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						background: white;
+						opacity: 0.1;
+					}
+					#landing #holi {
+						display: block;
+						position: absolute;
+						top: 20%;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						height: 100%;
+						width: 100%;
+						max-width: 600px;
+						transform: translateY(0px);
+						transition: transform 750ms ease-out;
+					}
+					#landing #logo {
+						position: absolute;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						font-family: 'manonegra';
+						font-size: 64px;
+						text-align: center;
+						text-shadow: 0 0 5px #ffffff;
+						transform: translateX(0px);
+						transition: transform 750ms ease-out;
+					}
+						#landing #logo img {
+							width: 200px;
+						}
+		</style>
+	</head>
+	<body>
+		<div id='wrapper'>
+            <div id='landing'>
+				<div id='cover'></div>
+                <img id='holi' src='./res/holi.png'>
+                <div id='logo'>
+					<img src='./res/logo.png'>
+					<br>
+					#I<em>Lake</em>It
+				</div>
+            </div>
+		</div>
+		<script>
+
+			(function() {
+			
+				let romX = 5;
+				let romY = 50;
+				let lastY = 0;
+				let scrollTopOffset = 0;
+				let scrollThrottle = false;
+				let mouseThrottle = false;
+				let cube = document.querySelector('#holi');
+				let rect = document.querySelector('#logo');
+				
+				window.addEventListener('scroll', function(e) {
+					let lastY = window.scrollY;
+					if (!scrollThrottle && window.requestAnimationFrame) {
+						window.requestAnimationFrame(function() {
+							let ratio = Math.max(0, (lastY - scrollTopOffset) / window.innerHeight);
+							let y = Math.round(romY * Math.min(1, ratio));
+							cube.style.transform = 'translateY(' + y + 'px)';
+							scrollThrottle = false;
+						});
+						scrollThrottle = true;
+					}
+				});
+
+				document.onmousemove = function(e) {
+					if (!mouseThrottle && window.requestAnimationFrame) {
+						window.requestAnimationFrame(function() {
+							let sign = 1;
+							let half = window.innerWidth / 2;
+							let ratio = Math.abs(e.pageX - half) / half;
+							if (e.pageX > half) sign = -1;
+							let x = sign * (Math.round(romX * Math.min(1, ratio)));
+							rect.style.transform = 'translateX(' + x + 'px)';
+							mouseThrottle = false;
+						});
+						mouseThrottle = true;
+					}
+				}
+				
+			})();
+			
+		</script>
+	</body>
+</html>
