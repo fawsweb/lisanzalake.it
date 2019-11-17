@@ -1,42 +1,62 @@
 <!DOCTYPE html>
-<html lang="it-IT">
+<html lang='it-IT'>
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-		<link rel="icon" href="./res/favicon.png">
+		<meta charset='UTF-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0'>
+		<link rel='icon' href='./res/favicon.png'>
 		<title>Lisanza Lake | #ILakeIt</title>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 		<style>
-			@font-face {
-				font-family: 'manonegra';
-				src: url('./res/manonegra_bold.woff') format('woff');
-				font-weight: bold;
-				font-style: normal;
-			}
+			@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap');
 			@font-face {
 				font-family: 'manonegra';
 				src: url('./res/manonegra_regular.woff') format('woff');
-				font-weight: normal;
-				font-style: normal;
 			}
 			html, body {
 				margin: 0;
 				padding: 0;
 				width: 100%;
 				height: 100%;
-				font-family: 'Helvetica', sans-serif;
-				font-size: 14px;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 1.5;
 			}
-			em {
-				font-weight: bold;
-				color: rgb(30,110,200);
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 300;
+			}
+			b, strong {
+				font-weight: 700;
+			}
+			em, a {
+				font-weight: 700;
+				color: rgb(30,170,250);
+				text-decoration: none;
+			}
+			.text-left {
+				text-align: left;
+			}
+			.text-right {
+				text-align: right;
+			}
+			.text-center {
+				text-align: center;
+			}
+			.clearfix:after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+			.light {
+				opacity: 0.66;
 			}
 		</style>
 		<style>
 			#wrapper {
 				position: relative;
 				width: 100%;
-				height: 2000px;
 			}
 				#landing {
 					position: relative;
@@ -83,6 +103,37 @@
 						#landing #logo img {
 							width: 200px;
 						}
+				.container {
+					display: block;
+					width: 90%;
+					margin: 0 auto;
+				}
+					.container .gallery {
+						display: block;
+						width: 100%;
+						margin: 0 auto;
+					}
+						.container .gallery .gallery-item {
+							display: block;
+							float: left;
+							width: 31%;
+							margin: 1%;
+						}
+					@media (max-width: 480px) {
+						.container .gallery .gallery-item {
+							width: 48%;
+						}
+					}
+					@media (max-width: 320px) {
+						.container .gallery .gallery-item {
+							width: 98%;
+						}
+					}
+							.container .gallery .gallery-item .gallery-image {
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
 		</style>
 	</head>
 	<body>
@@ -95,6 +146,82 @@
 					<br>#I<em>Lake</em>It
 				</div>
             </div>
+			<div class='clearfix container' style='max-width: 600px'>
+				<!--
+					Spritzettino al tramonto
+					Selfie sul lettino
+					Spaghettino alle vongole
+					Tartare di tonno
+					Fritturina e birretta
+					Tintarella sotto il sole
+					Ghiacciolo ghiacciato
+					Ballare sulla spiaggia
+				-->
+				<h2 class='text-left'><b>La tua estate</b> sul Lago Maggiore</h2>
+				<h2 class='text-right'>Lisanza Lake. <b>More than a beach!</b></h2>
+				<p class='text-left'><b>Lisanza Lake</b> è la spiaggia attrezzata sul <b>Lago di Lisanza</b> a Sesto Calende che ti permette di vivere l'estate nelle sue espressioni migliori, dall'alba al tramonto.</p>
+				<p class='text-left'>Vuoi un esempio?</p>
+				<p class='text-left'><b class='light'>10:00</b><br>Inizia la giornata godendoti il sole mattutino sui <b>LETTINI</b> della nostra <b>SPIAGGIA</b>...</p>
+				<p class='text-right'><b class='light'>13:00</b><br><b>PRANZA</b> in riva al lago all'ombra del nostro deor...</p>
+				<p class='text-left'><b class='light'>17:00</b><br>Fai un tuffo nell'acqua e rinfrescati al <b>BAR</b>...</p>
+				<p class='text-right'><b class='light'>19:00</b><br>Goditi il tramonto durante l'<b>APERITIVO</b>...</p>
+				<p class='text-left'><b class='light'>20:00</b><br><b>CENA</b> a base delle specialità di pesce del nostro Chef...</p>
+				<p class='text-right'><b class='light'>22:00</b><br>Balla sulle note del nostro <b>DJ-SET</b>...</p>
+				<p class='text-center'>Sei anche tu sei un <a href='https://www.instagram.com/explore/tags/sunsetlovers'>#sunsetlovers</a>? Noi siamo sulla sponda orientale del lago...<br>Quella con il tramonto migliore! ;)</p>
+				<h3 class='text-center'><b>Info &amp; Prenotazioni</b></h3>
+				<p class='text-center'>
+					<i class='fa fa-map-marker'></i> Via Al Lago, 9, 21018, Lisanza VA<br>
+					<i class='fa fa-calendar-o'></i> Aperti dalle 10 alle 24, chiusi la domenica<br>
+					<i class='fa fa-phone'></i> <small>(+39)</small> 347 560 9565<br>
+					<i class='fa fa-envelope-o'></i> <a href='malto:info@lisanzalake.it'>info@lisanzalake.it</a><br>
+					<i class='fa fa-instagram'></i> <a href='https://www.instagram.com/lisanzalake'>lisanzalake</a><br>
+					<i class='fa fa-facebook'></i> <a href='https://www.facebook.com/lisanzalake'>lisanzalake</a>
+				</p>
+			</div>
+			<div class='clearfix container'>
+				<div class='gallery'>
+					<div class='gallery-item'><img src='./img/thumb/1.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/2.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/3.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/4.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/5.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/6.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/7.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/8.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/9.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/10.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/11.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/12.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/13.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/14.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/15.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/16.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/17.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/18.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/19.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/20.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/21.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/22.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/23.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/24.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/25.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/26.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/27.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/28.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/29.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/30.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/31.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/32.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/33.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/34.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/35.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/36.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/37.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/38.jpg' class='gallery-image'></div>
+					<div class='gallery-item'><img src='./img/thumb/39.jpg' class='gallery-image'></div>
+				</div>
+			</div>
+			<footer class='text-center'><small>Copyright © 2019 Lisanza Lake | <a href='./privacy.html' target='_blank'><b>privacy policy</b></a></small></footer>
 		</div>
 		<script>
 
@@ -139,6 +266,15 @@
 				
 			})();
 			
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-', 'auto');
+			ga('send', 'pageview');
+			ga('set', 'anonymizeIp', true);
 		</script>
 	</body>
 </html>
